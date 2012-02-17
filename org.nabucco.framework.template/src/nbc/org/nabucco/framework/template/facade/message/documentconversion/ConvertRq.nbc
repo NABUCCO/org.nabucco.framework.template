@@ -1,0 +1,51 @@
+/*
+* Copyright 2011 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://nabuccosource.org/nabucco-license.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.framework.template.facade.message.documentconversion; 
+
+import org.nabucco.framework.base.facade.datatype.Data;
+import org.nabucco.framework.base.facade.datatype.Flag;
+import org.nabucco.framework.base.facade.datatype.file.FileExtension;
+import org.nabucco.framework.base.facade.datatype.file.FileName;
+import org.nabucco.framework.base.facade.datatype.file.FileSize;
+
+
+
+@Author         hlibrenz
+@Company        PRODYNA AG
+@Date           2011-04-04
+@Version        1.0
+@Description    Request for document conversion via adapter
+public Message ConvertRq {
+
+	@Description	The source file extension.
+	private Basetype FileExtension[1] sourceExtension;
+	
+	@Description	The target file extension (base for Mime-type guessing)
+	private Basetype FileExtension[1] targetExtension;
+
+	@Description	Content as byte array
+	private Basetype Data[1] data;
+
+	@Description	If set, the content of the generated file is returned in the response message
+	private Basetype Flag[1] provideData;
+
+	@Description	The given size of the byte array (or better: the file size)
+	private Basetype FileSize[1] byteSize;
+	
+	private Basetype FileName[1] fileName;      
+
+}

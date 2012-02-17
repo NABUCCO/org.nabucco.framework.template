@@ -1,0 +1,16 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2011, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.datatype.dictionary; 
+
+@Author         jweismueller
+@Company        PRODYNA AG
+@Date           2011-07-01
+@Version        1.0
+@Description    
+public Datatype DocumentValueDictionaryRoot extends DocumentValueDictionary {
+
+	private Datatype DocumentValueDictionaryList[0..*] listList;
+
+}

@@ -1,0 +1,22 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2011, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.datatype.pdf; 
+
+import org.nabucco.framework.base.facade.datatype.NabuccoDatatype;
+import org.nabucco.framework.base.facade.datatype.Name;
+import org.nabucco.framework.base.facade.datatype.Number;
+
+@Author         Raffael Bieniek
+@Company        PRODYNA AG
+@Date           2011-07-05
+@Version        1.0
+@Description    A print request for the pdfMerge-service
+public Datatype PdfPrintRequest extends NabuccoDatatype {
+
+	public Basetype Name[1] fileName;
+
+	public Basetype Number[1] numberOfPrints;
+
+}

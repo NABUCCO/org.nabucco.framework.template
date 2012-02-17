@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="out/ide/nbc" path="src/nbc"/>
+	<classpathentry kind="src" output="out/ide/test" path="src/test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JBOSS"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.facade.component"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.facade.datatype"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.facade.exception"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.facade.message"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.facade.service"/>
+	<classpathentry kind="lib" path="lib/facade/org.nabucco.framework.base.facade.jar" sourcepath="lib/source/org.nabucco.framework.base.facade.sources.zip"/>
+	<classpathentry kind="lib" path="lib/facade/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/facade/org.nabucco.common.cache.jar"/>
+	<classpathentry kind="lib" path="lib/facade/org.nabucco.common.extension.jar"/>
+	<classpathentry kind="lib" path="lib/test/junit.jar"/>
+	<classpathentry kind="lib" path="lib/test/org.nabucco.framework.base.test.jar"/>
+	<classpathentry kind="lib" path="lib/web/jopendocument.jar"/>
+	<classpathentry kind="lib" path="lib/impl/iText.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.impl.component"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.impl.service"/>
+	<classpathentry kind="output" path="out/ide"/>
+</classpath>

@@ -1,0 +1,19 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2011, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.message.textmodule.produce; 
+
+import org.nabucco.framework.base.facade.datatype.Number;
+
+@Author         hlibrenz
+@Company        PRODYNA AG
+@Date           2011-03-24
+@Version        1.0
+@Description    Input message for producer service.
+public Message TextModuleProduceRq {
+
+	@Description The number of text modules to be produced
+	private Basetype Number[1] amount;
+
+}

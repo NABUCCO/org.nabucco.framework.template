@@ -1,0 +1,14 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2011, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.datatype.dictionary; 
+
+@Author         jweismueller
+@Company        PRODYNA AG
+@Date           2011-06-30
+@Version        1.0
+@Description    n/a 
+public Datatype DocumentValueDictionaryRecord extends DocumentValueDictionary {
+
+}

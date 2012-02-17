@@ -1,0 +1,40 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2010, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.datatype.textmodule; 
+
+import org.nabucco.framework.base.facade.datatype.Description;
+import org.nabucco.framework.base.facade.datatype.NabuccoDatatype;
+import org.nabucco.framework.base.facade.datatype.code.Code;
+import org.nabucco.framework.base.facade.datatype.date.Timestamp;
+import org.nabucco.framework.base.facade.datatype.text.TextContent;
+
+@Author         hlibrenz
+@Company        PRODYNA AG
+@Date           2011-03-24
+@Version        1.0
+@Description    Represents one text module
+public Datatype TextModule extends NabuccoDatatype {
+
+	@Description	Tags the module for one of preconfigured category
+	@CodePath	nabucco.framework.template.textmodule.moduletype
+	private Datatype Code[1] moduleType;
+
+	@CodePath	nabucco.framework.template.textmodule.modulecategorytype
+	private Datatype Code[1] moduleCategoryType;
+
+	@Description	For that language is this text module for?
+	@CodePath	nabucco.framework.language
+	private Datatype Code[0..1] language;
+
+	@Description	Short description
+	private Basetype Description[0..1] description;
+
+	@Description	The text module content itself.
+	private Basetype TextContent[1] content;
+
+	@Description	The last time, the content was modified
+	private Basetype Timestamp[0..1] lastModified;
+
+}

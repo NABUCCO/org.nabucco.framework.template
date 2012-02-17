@@ -1,0 +1,19 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2010, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.message.textmodule; 
+
+import org.nabucco.framework.template.facade.datatype.textmodule.TextModule;
+
+@Author         hlibrenz
+@Company        PRODYNA AG
+@Date           2011-03-24
+@Version        1.0
+@Description    Message with information for resolving text modules
+public Message TextModuleMsg {
+
+	@Description	A TextModule instance.
+	private Datatype TextModule[1] textModule;
+
+}

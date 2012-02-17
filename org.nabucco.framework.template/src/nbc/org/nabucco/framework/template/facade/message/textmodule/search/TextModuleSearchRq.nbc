@@ -1,0 +1,19 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2010, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.message.textmodule.search; 
+
+import org.nabucco.framework.base.facade.datatype.code.Code;
+
+@Author         hlibrenz
+@Company        PRODYNA AG
+@Date           2011-03-25
+@Version        1.0
+@Description    Request message for search service. Should be used if you look for special types.
+public Message TextModuleSearchRq {
+
+	@Description	The module type you are looking for.
+	private Datatype Code[1] moduleType;	
+
+}

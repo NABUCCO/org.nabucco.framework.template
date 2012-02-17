@@ -1,0 +1,34 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2011, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.datatype.odf; 
+
+@Author         Holger Librenz
+@Company        PRODYNA AG
+@Date           2011-06-07
+@Version        1.0
+@Description    Types the supported Open Document file types
+public Enumeration OpenDocumentType {
+
+	@Description Classic text file
+	@LiteralId ODT
+	OPENDOCUMENTTEXT
+	
+	@Description Spreadsheet
+	@LiteralId ODS
+	OPENDOCUMENTSPREADSHEET
+
+	@Description Presenation file
+	@LiteralId ODP
+	OPENDOCUMENTPRESENTATION
+
+	@Description Text template file
+	@LiteralId OTT
+	OPENDOCUMENTTEXTTEMPLATE
+
+	@Description Spreadsheet template file
+	@LiteralId OTS
+	OPENDOCUMENTSPREADSHEETTEMPLATE
+
+}

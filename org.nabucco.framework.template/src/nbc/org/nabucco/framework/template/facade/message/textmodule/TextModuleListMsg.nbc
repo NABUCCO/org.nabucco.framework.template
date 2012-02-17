@@ -1,0 +1,18 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2011, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.message.textmodule; 
+
+import org.nabucco.framework.template.facade.datatype.textmodule.TextModule;
+
+@Author         Holger Librenz
+@Company        PRODYNA AG
+@Date           2011-03-24
+@Version        1.0
+@Description    Contains one or more text modules.
+public Message TextModuleListMsg {
+
+	@Description	Contains, as a result of a service call, a number of text modules.
+	private Datatype TextModule[0..*] textModuleList;
+}

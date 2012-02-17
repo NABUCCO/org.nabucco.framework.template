@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TemplateExtension" xmlns:tns="http://www.example.org/TemplateExtension" elementFormDefault="qualified">
+
+
+
+    <group name="template">
+    	<sequence></sequence>
+    </group>
+
+    <element name="template" type="tns:TemplateRoot"></element>
+    
+    <complexType name="TemplateRoot">
+    	<sequence>
+    	</sequence>
+    </complexType>
+    
+    <element name="context" type="tns:ContextRoot"></element>
+    
+    <complexType name="ContextRoot"></complexType>
+
+    <complexType name="group"></complexType>
+
+
+</schema>

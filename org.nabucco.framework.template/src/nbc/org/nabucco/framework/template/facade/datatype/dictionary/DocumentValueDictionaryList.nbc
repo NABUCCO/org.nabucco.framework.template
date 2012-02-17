@@ -1,0 +1,21 @@
+/*
+ *  PRODYNA NABUCCO
+ *  Copyright 2011, PRODYNA AG
+ */
+package org.nabucco.framework.template.facade.datatype.dictionary; 
+
+import org.nabucco.framework.base.facade.datatype.Key;
+import org.nabucco.framework.base.facade.datatype.NabuccoDatatype;
+
+@Author         jweismueller
+@Company        PRODYNA AG
+@Date           2011-06-30
+@Version        1.0
+@Description    n/a 
+public Datatype DocumentValueDictionaryList extends NabuccoDatatype {
+
+	public Basetype Key[1] key;
+
+	public Datatype DocumentValueDictionaryRecord[0..*] recordList;
+
+}

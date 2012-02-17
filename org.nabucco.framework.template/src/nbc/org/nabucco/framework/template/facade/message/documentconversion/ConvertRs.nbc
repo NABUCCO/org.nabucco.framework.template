@@ -1,0 +1,46 @@
+/*
+* Copyright 2011 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://nabuccosource.org/nabucco-license.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.framework.template.facade.message.documentconversion; 
+
+import org.nabucco.framework.base.facade.datatype.Data;
+import org.nabucco.framework.base.facade.datatype.file.FileExtension;
+import org.nabucco.framework.base.facade.datatype.file.FileName;
+import org.nabucco.framework.base.facade.datatype.file.FileSize;
+import org.nabucco.framework.base.facade.datatype.net.Url;
+
+@Author         hlibrenz
+@Company        PRODYNA AG
+@Date           2011-04-04
+@Version        1.0
+@Description    Requests the creation of an ODF file, based on information inside
+public Message ConvertRs {
+
+	@Description	The URL to the generated file.
+	private Basetype Url[1] url; 
+	
+	@Description	If ConvertRq.provideData was set, the generated file content is provided in this field as byte array
+	private Basetype Data[0..1] data;
+	
+	@Description	If data is filled, this field represents the size of the byte array
+	private Basetype FileSize[0..1] byteSize;   
+
+	@Description	The target file extension
+	private Basetype FileExtension[1] targetExtension; 
+
+	@Description	The target file name
+	private Basetype FileName[1] fileName; 
+}
