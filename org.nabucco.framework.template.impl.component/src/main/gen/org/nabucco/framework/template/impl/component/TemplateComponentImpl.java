@@ -1,18 +1,16 @@
 /*
  * Copyright 2012 PRODYNA AG
- *
- * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
+ * 
+ * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License"); you may not use
+ * this file except in compliance with the License. You may obtain a copy of the License at
+ * 
  * http://www.opensource.org/licenses/eclipse-1.0.php or
  * http://www.nabucco.org/License.html
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package org.nabucco.framework.template.impl.component;
 
@@ -25,6 +23,10 @@ import org.nabucco.framework.base.facade.service.queryfilter.QueryFilterService;
 import org.nabucco.framework.base.impl.component.ComponentSupport;
 import org.nabucco.framework.template.facade.component.TemplateComponentLocal;
 import org.nabucco.framework.template.facade.component.TemplateComponentRemote;
+import org.nabucco.framework.template.facade.service.datastructure.maintain.MaintainDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.produce.ProduceDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.resolve.ResolveDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.transfer.TransferDatastructureData;
 import org.nabucco.framework.template.facade.service.odf.produce.ProduceOdf;
 import org.nabucco.framework.template.facade.service.odf.text.OdtTemplateService;
 import org.nabucco.framework.template.facade.service.pdf.merge.MergePdf;
@@ -117,6 +119,48 @@ public class TemplateComponentImpl extends ComponentSupport implements TemplateC
     @Override
     public QueryFilterService getQueryFilterServiceLocal() throws ServiceException {
         return super.lookup(TemplateComponentJndiNames.QUERY_FILTER_SERVICE_LOCAL, QueryFilterService.class);
+    }
+
+    @Override
+    public ProduceDatastructure getProduceDatastructureLocal() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.PRODUCE_DATASTRUCTURE_LOCAL, ProduceDatastructure.class);
+    }
+
+    @Override
+    public ProduceDatastructure getProduceDatastructure() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.PRODUCE_DATASTRUCTURE_REMOTE, ProduceDatastructure.class);
+    }
+
+    @Override
+    public MaintainDatastructure getMaintainDatastructureLocal() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.MAINTAIN_DATASTRUCTURE_LOCAL, MaintainDatastructure.class);
+    }
+
+    @Override
+    public MaintainDatastructure getMaintainDatastructure() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.MAINTAIN_DATASTRUCTURE_REMOTE, MaintainDatastructure.class);
+    }
+
+    @Override
+    public ResolveDatastructure getResolveDatastructureLocal() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.RESOLVE_DATASTRUCTURE_LOCAL, ResolveDatastructure.class);
+    }
+
+    @Override
+    public ResolveDatastructure getResolveDatastructure() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.RESOLVE_DATASTRUCTURE_REMOTE, ResolveDatastructure.class);
+    }
+
+    @Override
+    public TransferDatastructureData getTransferDatastructureDataLocal() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.TRANSFER_DATASTRUCTURE_DATA_LOCAL,
+                TransferDatastructureData.class);
+    }
+
+    @Override
+    public TransferDatastructureData getTransferDatastructureData() throws ServiceException {
+        return super.lookup(TemplateComponentJndiNames.TRANSFER_DATASTRUCTURE_DATA_REMOTE,
+                TransferDatastructureData.class);
     }
 
     @Override

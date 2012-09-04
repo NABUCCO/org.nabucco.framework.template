@@ -70,7 +70,7 @@ public class CreateOpenDocumentFileServiceHandlerImpl extends CreateOpenDocument
             out.close();
 
             String outFileName = msg.getOutputFileName().getValueAsString();
-            String createUserId = getContext().getSubject().getUserId().getValueAsString();
+            String createUserId = this.getContext().getSubject().getUserId().getValueAsString();
             OpenDocumentType outType = msg.getOutputType();
             TemplateData output = TemplateUtil.generateOdfTemplateData(data, outFileName, createUserId, outType);
 

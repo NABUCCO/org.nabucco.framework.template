@@ -16,7 +16,13 @@
 */
 package org.nabucco.framework.template.facade.component;
 
+import org.nabucco.framework.template.facade.datatype.TemplateDatastructure;
+import org.nabucco.framework.template.facade.datatype.TemplateDatastructureReferenceItem;
 import org.nabucco.framework.template.facade.datatype.textmodule.TextModule;
+import org.nabucco.framework.template.facade.service.datastructure.maintain.MaintainDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.produce.ProduceDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.resolve.ResolveDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.transfer.TransferDatastructureData;
 import org.nabucco.framework.template.facade.service.odf.produce.ProduceOdf;
 import org.nabucco.framework.template.facade.service.odf.text.OdtTemplateService;
 import org.nabucco.framework.template.facade.service.pdf.merge.MergePdf;
@@ -38,8 +44,25 @@ public Component TemplateComponent {
 	@Description		
 	private persistent Datatype TextModule[1] textModule;
 
-
+	@Referenceable
+	@Description		The referencable datatstructure instance		
+	private persistent Datatype TemplateDatastructure[1] templateDatatstructure;  
+	
+	@Description		The key in the datastructure tree to access usualy used data and transfer it
+	private persistent Datatype TemplateDatastructureReferenceItem[1] templateDatastructureKey;
+	  
 	/* Services */
+	@Description	Produces a new instance of the dynamical datatystructure
+	public Service ProduceDatastructure; 
+	
+	@Description	Maintains a new instance of the dynamical datatystructure
+	public Service MaintainDatastructure; 
+	
+	@Description	Resolves a new instance of the dynamical datatystructure
+	public Service ResolveDatastructure; 
+	
+	@Description	Transfers data between datastructures
+	public Service TransferDatastructureData;
 
 	public Service ProduceTextModule;
 

@@ -12,6 +12,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.facade.service"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.nabucco.framework.template.facade.component"/>
 	<classpathentry kind="lib" path="/org.nabucco.framework.template/lib/web/org.nabucco.framework.base.facade.jar"/>
-	<classpathentry kind="lib" path="/org.nabucco.framework.template/lib/web/org.nabucco.framework.base.ui.web.jar"/>
+	<classpathentry kind="lib" path="/org.nabucco.framework.template/lib/web/org.nabucco.framework.base.ui.web.jar" sourcepath="/org.nabucco.framework.base.ui.web"/>
 	<classpathentry kind="output" path="out/ide"/>
 </classpath>

@@ -1,18 +1,16 @@
 /*
  * Copyright 2012 PRODYNA AG
- *
- * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
+ * 
+ * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License"); you may not use
+ * this file except in compliance with the License. You may obtain a copy of the License at
+ * 
  * http://www.opensource.org/licenses/eclipse-1.0.php or
  * http://www.nabucco.org/License.html
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package org.nabucco.framework.template.ui.rcp.communication;
 
@@ -22,6 +20,10 @@ import org.nabucco.framework.base.facade.exception.service.ServiceException;
 import org.nabucco.framework.plugin.base.component.communication.ServiceDelegateFactorySupport;
 import org.nabucco.framework.template.facade.component.TemplateComponent;
 import org.nabucco.framework.template.facade.component.TemplateComponentLocator;
+import org.nabucco.framework.template.ui.rcp.communication.datastructure.maintain.MaintainDatastructureDelegate;
+import org.nabucco.framework.template.ui.rcp.communication.datastructure.produce.ProduceDatastructureDelegate;
+import org.nabucco.framework.template.ui.rcp.communication.datastructure.resolve.ResolveDatastructureDelegate;
+import org.nabucco.framework.template.ui.rcp.communication.datastructure.transfer.TransferDatastructureDataDelegate;
 import org.nabucco.framework.template.ui.rcp.communication.odf.produce.ProduceOdfDelegate;
 import org.nabucco.framework.template.ui.rcp.communication.odf.text.OdtTemplateServiceDelegate;
 import org.nabucco.framework.template.ui.rcp.communication.pdf.merge.MergePdfDelegate;
@@ -40,6 +42,14 @@ public class TemplateComponentServiceDelegateFactory extends ServiceDelegateFact
 
     private static TemplateComponentServiceDelegateFactory instance = new TemplateComponentServiceDelegateFactory();
 
+    private ProduceDatastructureDelegate produceDatastructureDelegate;
+
+    private MaintainDatastructureDelegate maintainDatastructureDelegate;
+
+    private ResolveDatastructureDelegate resolveDatastructureDelegate;
+
+    private TransferDatastructureDataDelegate transferDatastructureDataDelegate;
+
     private ProduceTextModuleDelegate produceTextModuleDelegate;
 
     private MaintainTextModuleDelegate maintainTextModuleDelegate;
@@ -57,6 +67,86 @@ public class TemplateComponentServiceDelegateFactory extends ServiceDelegateFact
     /** Constructs a new TemplateComponentServiceDelegateFactory instance. */
     private TemplateComponentServiceDelegateFactory() {
         super(TemplateComponentLocator.getInstance());
+    }
+
+    /**
+     * Getter for the ProduceDatastructure.
+     *
+     * @return the ProduceDatastructureDelegate.
+     * @throws ClientException
+     */
+    public ProduceDatastructureDelegate getProduceDatastructure() throws ClientException {
+        try {
+            if ((this.produceDatastructureDelegate == null)) {
+                this.produceDatastructureDelegate = new ProduceDatastructureDelegate(this.getComponent()
+                        .getProduceDatastructure());
+            }
+            return this.produceDatastructureDelegate;
+        } catch (ConnectionException e) {
+            throw new ClientException("Cannot connect to component: TemplateComponent", e);
+        } catch (ServiceException e) {
+            throw new ClientException("Cannot locate service: ProduceDatastructure", e);
+        }
+    }
+
+    /**
+     * Getter for the MaintainDatastructure.
+     *
+     * @return the MaintainDatastructureDelegate.
+     * @throws ClientException
+     */
+    public MaintainDatastructureDelegate getMaintainDatastructure() throws ClientException {
+        try {
+            if ((this.maintainDatastructureDelegate == null)) {
+                this.maintainDatastructureDelegate = new MaintainDatastructureDelegate(this.getComponent()
+                        .getMaintainDatastructure());
+            }
+            return this.maintainDatastructureDelegate;
+        } catch (ConnectionException e) {
+            throw new ClientException("Cannot connect to component: TemplateComponent", e);
+        } catch (ServiceException e) {
+            throw new ClientException("Cannot locate service: MaintainDatastructure", e);
+        }
+    }
+
+    /**
+     * Getter for the ResolveDatastructure.
+     *
+     * @return the ResolveDatastructureDelegate.
+     * @throws ClientException
+     */
+    public ResolveDatastructureDelegate getResolveDatastructure() throws ClientException {
+        try {
+            if ((this.resolveDatastructureDelegate == null)) {
+                this.resolveDatastructureDelegate = new ResolveDatastructureDelegate(this.getComponent()
+                        .getResolveDatastructure());
+            }
+            return this.resolveDatastructureDelegate;
+        } catch (ConnectionException e) {
+            throw new ClientException("Cannot connect to component: TemplateComponent", e);
+        } catch (ServiceException e) {
+            throw new ClientException("Cannot locate service: ResolveDatastructure", e);
+        }
+    }
+
+    /**
+     * Getter for the TransferDatastructureData.
+     *
+     * @return the TransferDatastructureDataDelegate.
+     * @throws ClientException
+     */
+    public TransferDatastructureDataDelegate getTransferDatastructureData() throws ClientException {
+        try {
+            if ((this.transferDatastructureDataDelegate == null)) {
+                this.transferDatastructureDataDelegate = new TransferDatastructureDataDelegate(this.getComponent()
+                        .getTransferDatastructureData());
+            }
+            return this.transferDatastructureDataDelegate;
+        } catch (ConnectionException e) {
+            throw new ClientException("Cannot connect to component: TemplateComponent", e);
+        } catch (ServiceException e) {
+            throw new ClientException("Cannot locate service: TransferDatastructureData", e);
+        }
     }
 
     /**

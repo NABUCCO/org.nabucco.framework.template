@@ -1,24 +1,26 @@
 /*
  * Copyright 2012 PRODYNA AG
- *
- * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
+ * 
+ * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License"); you may not use
+ * this file except in compliance with the License. You may obtain a copy of the License at
+ * 
  * http://www.opensource.org/licenses/eclipse-1.0.php or
  * http://www.nabucco.org/License.html
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package org.nabucco.framework.template.facade.component;
 
 import org.nabucco.framework.base.facade.exception.service.ServiceException;
 import org.nabucco.framework.base.facade.service.componentrelation.ComponentRelationService;
 import org.nabucco.framework.base.facade.service.queryfilter.QueryFilterService;
+import org.nabucco.framework.template.facade.service.datastructure.maintain.MaintainDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.produce.ProduceDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.resolve.ResolveDatastructure;
+import org.nabucco.framework.template.facade.service.datastructure.transfer.TransferDatastructureData;
 import org.nabucco.framework.template.facade.service.odf.produce.ProduceOdf;
 import org.nabucco.framework.template.facade.service.odf.text.OdtTemplateService;
 import org.nabucco.framework.template.facade.service.pdf.merge.MergePdf;
@@ -50,6 +52,38 @@ public interface TemplateComponentLocal extends TemplateComponent {
      * @throws ServiceException
      */
     QueryFilterService getQueryFilterServiceLocal() throws ServiceException;
+
+    /**
+     * Getter for the ProduceDatastructureLocal.
+     *
+     * @return the ProduceDatastructure.
+     * @throws ServiceException
+     */
+    ProduceDatastructure getProduceDatastructureLocal() throws ServiceException;
+
+    /**
+     * Getter for the MaintainDatastructureLocal.
+     *
+     * @return the MaintainDatastructure.
+     * @throws ServiceException
+     */
+    MaintainDatastructure getMaintainDatastructureLocal() throws ServiceException;
+
+    /**
+     * Getter for the ResolveDatastructureLocal.
+     *
+     * @return the ResolveDatastructure.
+     * @throws ServiceException
+     */
+    ResolveDatastructure getResolveDatastructureLocal() throws ServiceException;
+
+    /**
+     * Getter for the TransferDatastructureDataLocal.
+     *
+     * @return the TransferDatastructureData.
+     * @throws ServiceException
+     */
+    TransferDatastructureData getTransferDatastructureDataLocal() throws ServiceException;
 
     /**
      * Getter for the ProduceTextModuleLocal.
